@@ -25,56 +25,13 @@ public class ShellRotate {
 		for(Integer i : oneDArray){
 			System.out.print(i + "\t");
 		}
-		System.out.println("\n");
 		rotateOned(oneDArray,rotate);
-		fillTwodArray(arr,s,oneDArray);
-		
-		display(arr);
+		fillTwodArray(arr,s);
 
 	}
-	
-	
-	public static void display(int[][] array){
-		for(int i=0 ; i < array.length ; i++){
-			for(int j=0 ; j< array[0].length ;j++){
-				System.out.print(array[i][j] + "\t");
-			}
-			System.out.println();
-		}
-	}
-	private static void fillTwodArray(int[][] arr, int s , int[] oneDArr) {
-		int minr = s-1;
-		int minc =s-1;
-		int maxr =arr.length -s ;
-		int maxc = arr[0].length - s ;
-		
-		int index = 0;
-		//left wall
-		for(int i = minr, j = minc ; i <= maxr; i++){
-			arr[i][j] = oneDArr[index] ;
-			index++;
-		}
-		
-		//bottom wall
-		for(int i = maxr, j = minc + 1 ; j <= maxc; j++){
-			arr[i][j] = oneDArr[index] ;
-			index++;
-		}
-		
-		//right wall
-		for(int i = maxr -1 , j = maxc ; i >= minr; i--){
-			arr[i][j] = oneDArr[index] ;
-			index++;
-		}
-		
-		//top wall
-		for(int i = minr, j = maxc -1 ; j >= minc + 1; j--){
-			arr[i][j] = oneDArr[index] ;
-			index++;
-		}
-		
-		
-		
+
+	private static void fillTwodArray(int[][] arr, int s) {
+		// TODO Auto-generated method stub
 		
 	}
 

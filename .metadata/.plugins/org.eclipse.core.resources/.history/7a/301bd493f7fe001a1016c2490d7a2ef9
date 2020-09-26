@@ -1,0 +1,82 @@
+package Array2D;
+
+import java.util.Scanner;
+
+public class ShellRotate {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		int  r = sc.nextInt();
+		int c = sc.nextInt();
+		
+		int[][] arr =  new int[r][c];
+		for(int i = 0; i < arr.length ; i++){
+			for(int j=0 ; j < arr[0].length ; j++){
+				arr[i][j] = sc.nextInt();
+			}
+		}
+		
+		int s = sc.nextInt();
+		int rotate = sc.nextInt();
+		
+		//fillOneDarrayfromShellElements
+		int[] oneDArray = fillOnedArray(arr,s);
+		for(Integer i : oneDArray){
+			System.out.print(i + "\t");
+		}
+		rotateOned(oneDArray,rotate);
+		fillTwodArray(arr,s);
+
+	}
+
+	private static void fillTwodArray(int[][] arr, int s) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void rotateOned(int[] arr, int rotate) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static int[] fillOnedArray(int[][] arr, int s) {
+		int minr = s-1;
+		int minc =s-1;
+		int maxr =arr.length -s ;
+		int maxc = arr[0].length - s ;
+		
+		int size = 2 *(maxr -minr + 1) + 2 *(maxc-minc) -4 ;
+		int[] oneDArr = new int[size];
+		int index = 0;
+		//left wall
+		for(int i = minr, j = minc ; i < maxr; i++){
+			oneDArr[index] = arr[i][j];
+			index++;
+		}
+		
+		//bottom wall
+		for(int i = maxr, j = minc + 1 ; j < maxc; j++){
+			oneDArr[index] = arr[i][j];
+			index++;
+		}
+		
+		//right wall
+		for(int i = maxr -1 , j = maxc ; i > minr; i--){
+			oneDArr[index] = arr[i][j];
+			index++;
+		}
+		
+		//top wall
+		for(int i = minr, j = maxc -1 ; j > minc; j--){
+			oneDArr[index] = arr[i][j];
+			index++;
+		}
+		
+		
+		return oneDArr;
+		
+		
+	}
+
+}

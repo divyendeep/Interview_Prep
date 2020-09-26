@@ -25,23 +25,11 @@ public class ShellRotate {
 		for(Integer i : oneDArray){
 			System.out.print(i + "\t");
 		}
-		System.out.println("\n");
 		rotateOned(oneDArray,rotate);
 		fillTwodArray(arr,s,oneDArray);
-		
-		display(arr);
 
 	}
-	
-	
-	public static void display(int[][] array){
-		for(int i=0 ; i < array.length ; i++){
-			for(int j=0 ; j< array[0].length ;j++){
-				System.out.print(array[i][j] + "\t");
-			}
-			System.out.println();
-		}
-	}
+
 	private static void fillTwodArray(int[][] arr, int s , int[] oneDArr) {
 		int minr = s-1;
 		int minc =s-1;
